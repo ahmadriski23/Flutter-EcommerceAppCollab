@@ -55,6 +55,7 @@ class OnboardView extends GetView<OnboardController> {
                           ElevatedButton(
                               onPressed: () {
                                 controller.selectWomen();
+                                Get.toNamed('/main');
                               },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor:

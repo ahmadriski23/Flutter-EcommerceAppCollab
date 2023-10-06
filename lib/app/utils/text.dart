@@ -7,4 +7,5 @@ abstract class AppText {
   static TextStyle grayText = GoogleFonts.inter(color: AppColors.gray);
   static TextStyle whiteText = GoogleFonts.inter(color: AppColors.white);
   static TextStyle redText = GoogleFonts.inter(color: AppColors.red);
+  static TextStyle purpleText = GoogleFonts.inter(color: AppColors.purple);
 }
