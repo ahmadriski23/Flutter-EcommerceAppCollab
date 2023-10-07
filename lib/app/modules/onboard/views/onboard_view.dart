@@ -125,7 +125,7 @@ class OnboardView extends GetView<OnboardController> {
                                 ),
                                 InkWell(
                                   onTap: () {
-                                    Get.to(StartedView());
+                                    Get.toNamed('/main');
                                   },
                                   child: const Text(
                                     'Skip',
