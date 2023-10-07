@@ -6,6 +6,8 @@ import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
 import '../modules/onboard/bindings/onboard_binding.dart';
 import '../modules/onboard/views/onboard_view.dart';
+import '../modules/started/bindings/started_binding.dart';
+import '../modules/started/views/started_view.dart';
 
 part 'app_routes.dart';
 
@@ -26,9 +28,14 @@ class AppPages {
       binding: OnboardBinding(),
     ),
     GetPage(
+      name: _Paths.STARTED,
+      page: () => const StartedView(),
+      binding: StartedBinding(),
+      ),
+     GetPage(
       name: _Paths.MAIN,
       page: () => const MainView(),
-      binding: MainBinding(),
+      binding: MainBinding(),   
     ),
   ];
 }

@@ -5,6 +5,7 @@ abstract class Routes {
   Routes._();
   static const HOME = _Paths.HOME;
   static const ONBOARD = _Paths.ONBOARD;
+  static const STARTED = _Paths.STARTED;
   static const MAIN = _Paths.MAIN;
 }
 
@@ -12,5 +13,6 @@ abstract class _Paths {
   _Paths._();
   static const HOME = '/home';
   static const ONBOARD = '/onboard';
+  static const STARTED = '/started';
   static const MAIN = '/main';
 }

@@ -1,3 +1,5 @@
+import 'package:ecommerce_app/app/modules/onboard/widget/gender_button.dart';
+import 'package:ecommerce_app/app/modules/started/views/started_view.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -9,74 +11,139 @@ class OnboardView extends GetView<OnboardController> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Container(
-        color: Color(0xff7661C5),
-        child: Obx(
-          () => Column(
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    height: size.height,
-                    width: size.width,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/img/men.png'),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 500, 20, 0),
-                    child: Container(
-                      height: 250,
+    return Scaffold(
+      body: Container(
+          color: const Color(0xff7661C5),
+          child: Obx(
+            () => Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      height: size.height,
                       width: size.width,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Row(
-                        children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              controller.selectMen();
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: controller.isMenSelected.value
-                                    ? Colors.yellow
-                                    : Colors.red),
-                            child: Text(
-                              'Men',
-                              style: TextStyle(
-                                  color: controller.isMenSelected.value
-                                      ? Colors.yellow
-                                      : Colors.red),
-                            ),
-                          ),
-                          ElevatedButton(
-                              onPressed: () {
-                                controller.selectWomen();
-                                Get.toNamed('/main');
-                              },
-                              style: ElevatedButton.styleFrom(
-                                  backgroundColor:
-                                      controller.isWomenSelected.value
-                                          ? Colors.yellow
-                                          : Colors.red),
-                              child: Text(
-                                'Women',
-                                style: TextStyle(
-                                    color: controller.isWomenSelected.value
-                                        ? Colors.red
-                                        : Colors.yellow),
-                              ))
-                        ],
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.contain,
+                          image: AssetImage('assets/img/men.png'),
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              )
-            ],
-          ),
-        ));
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 500, 20, 0),
+                      child: Container(
+                        height: 275,
+                        width: size.width,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Column(
+                            children: [
+                              const SizedBox(
+                                height: 5.0,
+                              ),
+                              const Text(
+                                'Look Good, Feel Good',
+                                style: TextStyle(
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 15.0,
+                              ),
+                              Text(
+                                'Create your individual & unique style and look amazing everyday',
+                                style: TextStyle(
+                                  color: Colors.grey[500],
+                                  fontSize: 20,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                              const SizedBox(
+                                height: 25.0,
+                              ),
+
+                              // *  SELECT GENDER BUTTON
+                              Row(
+                                children: [
+                                  GenderButton(
+                                    onTap: () {
+                                      controller.selectMen();
+                                    },
+                                    decoration: BoxDecoration(
+                                      color: controller.isMenSelected.value
+                                          ? const Color(0xff9775FA)
+                                          : const Color(0xffF5F6FA),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    color: controller.isMenSelected.value
+                                        ? const Color(0xff9775FA)
+                                        : const Color(0xffF5F6FA),
+                                    text: 'Men',
+                                    textStyle: TextStyle(
+                                      fontSize: 20,
+                                      color: controller.isMenSelected.value
+                                          ? Colors.white
+                                          : const Color(0xff8F959E),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    width: 10.0,
+                                  ),
+                                  GenderButton(
+                                    onTap: () {
+                                      controller.selectWomen();
+                                    },
+                                    decoration: BoxDecoration(
+                                      color: controller.isWomenSelected.value
+                                          ? const Color(0xff9775FA)
+                                          : const Color(0xffF5F6FA),
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    color: controller.isWomenSelected.value
+                                        ? const Color(0xff9775FA)
+                                        : const Color(0xffF5F6FA),
+                                    text: 'Women',
+                                    textStyle: TextStyle(
+                                      fontSize: 20,
+                                      color: controller.isWomenSelected.value
+                                          ? Colors.white
+                                          : const Color(0xff8F959E),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 20.0,
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Get.to(StartedView());
+                                },
+                                child: const Text(
+                                  'Skip',
+                                  style: TextStyle(
+                                    color: Color(0xff8F959E),
+                                    fontSize: 20,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          )),
+    );
   }
 }
