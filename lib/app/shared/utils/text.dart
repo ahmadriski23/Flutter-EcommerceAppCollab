@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/app/utils/colors.dart';
+import 'package:ecommerce_app/app/shared/utils/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
