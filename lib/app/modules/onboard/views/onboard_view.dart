@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/app/modules/onboard/widget/gender_button.dart';
 import 'package:ecommerce_app/app/modules/started/views/started_view.dart';
+import 'package:ecommerce_app/app/shared/utils/text.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -48,22 +49,19 @@ class OnboardView extends GetView<OnboardController> {
                                 const SizedBox(
                                   height: 5.0,
                                 ),
-                                const Text(
+                                Text(
                                   'Look Good, Feel Good',
-                                  style: TextStyle(
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: AppText.blackText.copyWith(
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold),
                                 ),
                                 const SizedBox(
                                   height: 15.0,
                                 ),
                                 Text(
                                   'Create your individual & unique style and look amazing everyday',
-                                  style: TextStyle(
-                                    color: Colors.grey[500],
-                                    fontSize: 15,
-                                  ),
+                                  style:
+                                      AppText.grayText.copyWith(fontSize: 15),
                                   textAlign: TextAlign.center,
                                 ),
                                 const SizedBox(
@@ -87,12 +85,11 @@ class OnboardView extends GetView<OnboardController> {
                                           ? const Color(0xff9775FA)
                                           : const Color(0xffF5F6FA),
                                       text: 'Men',
-                                      textStyle: TextStyle(
-                                        fontSize: 17,
-                                        color: controller.isMenSelected.value
-                                            ? Colors.white
-                                            : const Color(0xff8F959E),
-                                      ),
+                                      textStyle: AppText.whiteText.copyWith(
+                                          color: controller.isMenSelected.value
+                                              ? Colors.white
+                                              : const Color(0xff8F959E),
+                                          fontSize: 17),
                                     ),
                                     const SizedBox(
                                       width: 10.0,
@@ -111,12 +108,12 @@ class OnboardView extends GetView<OnboardController> {
                                           ? const Color(0xff9775FA)
                                           : const Color(0xffF5F6FA),
                                       text: 'Women',
-                                      textStyle: TextStyle(
-                                        fontSize: 17,
-                                        color: controller.isWomenSelected.value
-                                            ? Colors.white
-                                            : const Color(0xff8F959E),
-                                      ),
+                                      textStyle: AppText.whiteText.copyWith(
+                                          color:
+                                              controller.isWomenSelected.value
+                                                  ? Colors.white
+                                                  : const Color(0xff8F959E),
+                                          fontSize: 17),
                                     ),
                                   ],
                                 ),
@@ -125,15 +122,11 @@ class OnboardView extends GetView<OnboardController> {
                                 ),
                                 InkWell(
                                   onTap: () {
-                                    Get.to(StartedView());
+                                    Get.to(const StartedView());
                                   },
-                                  child: const Text(
-                                    'Skip',
-                                    style: TextStyle(
-                                      color: Color(0xff8F959E),
-                                      fontSize: 17,
-                                    ),
-                                  ),
+                                  child: Text('Skip',
+                                      style: AppText.grayText
+                                          .copyWith(fontSize: 17)),
                                 )
                               ],
                             ),

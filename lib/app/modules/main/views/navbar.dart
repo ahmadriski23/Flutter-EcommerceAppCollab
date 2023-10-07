@@ -1,6 +1,6 @@
 import 'package:ecommerce_app/app/modules/main/controllers/navbar_controller.dart';
-import 'package:ecommerce_app/app/utils/colors.dart';
-import 'package:ecommerce_app/app/utils/text.dart';
+import 'package:ecommerce_app/app/shared/utils/colors.dart';
+import 'package:ecommerce_app/app/shared/utils/text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
