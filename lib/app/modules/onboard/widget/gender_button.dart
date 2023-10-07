@@ -17,10 +17,11 @@ class GenderButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return InkWell(
       onTap: onTap,
       child: AnimatedContainer(
-        width: 230,
+        width: size.width / 2.5,
         height: 60,
         duration: Duration(
           milliseconds: 500,
