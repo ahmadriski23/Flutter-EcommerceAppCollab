@@ -18,22 +18,24 @@ class GenderButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return InkWell(
-      onTap: onTap,
-      child: AnimatedContainer(
-        width: size.width / 2.5,
-        height: 60,
-        duration: Duration(
-          milliseconds: 500,
-        ),
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          color: color,
-        ),
-        child: Center(
-          child: Text(
-            text,
-            style: textStyle,
+    return Expanded(
+      child: InkWell(
+        onTap: onTap,
+        child: AnimatedContainer(
+          width: size.width / 2,
+          height: 60,
+          duration: Duration(
+            milliseconds: 500,
+          ),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: color,
+          ),
+          child: Center(
+            child: Text(
+              text,
+              style: textStyle,
+            ),
           ),
         ),
       ),
