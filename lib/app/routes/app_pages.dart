@@ -6,6 +6,8 @@ import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
 import '../modules/onboard/bindings/onboard_binding.dart';
 import '../modules/onboard/views/onboard_view.dart';
+import '../modules/signup/bindings/signup_binding.dart';
+import '../modules/signup/views/signup_view.dart';
 import '../modules/started/bindings/started_binding.dart';
 import '../modules/started/views/started_view.dart';
 
@@ -31,11 +33,16 @@ class AppPages {
       name: _Paths.STARTED,
       page: () => const StartedView(),
       binding: StartedBinding(),
-      ),
-     GetPage(
+    ),
+    GetPage(
       name: _Paths.MAIN,
       page: () => const MainView(),
-      binding: MainBinding(),   
+      binding: MainBinding(),
+    ),
+    GetPage(
+      name: _Paths.SIGNUP,
+      page: () => SignupView(),
+      binding: SignupBinding(),
     ),
   ];
 }
