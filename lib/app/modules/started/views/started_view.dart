@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/app/modules/signup/views/signup_view.dart';
 import 'package:ecommerce_app/app/modules/started/widget/account_button.dart';
 import 'package:ecommerce_app/app/shared/utils/colors.dart';
 import 'package:ecommerce_app/app/shared/utils/text.dart';
@@ -75,7 +76,8 @@ class StartedView extends GetView<StartedController> {
             const SizedBox(
               height: 25.0,
             ),
-            const QBottomButton(text: 'Create an Account'),
+            QBottomButton(
+                onTap: () => Get.to(SignupView()), text: 'Create an Account'),
           ],
         ),
       ),
