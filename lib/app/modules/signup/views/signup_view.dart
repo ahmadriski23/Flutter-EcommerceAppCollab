@@ -190,7 +190,7 @@ class SignupView extends GetView<SignupController> {
                 height: 15.0,
               ),
               QBottomButton(
-                onTap: () {},
+                onTap: () => Get.toNamed('/verification-code'),
                 text: 'Sign Up',
               )
             ],

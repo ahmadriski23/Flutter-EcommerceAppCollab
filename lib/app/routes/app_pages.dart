@@ -6,12 +6,16 @@ import '../modules/main/bindings/main_binding.dart';
 import '../modules/main/views/main_view.dart';
 import '../modules/onboard/bindings/onboard_binding.dart';
 import '../modules/onboard/views/onboard_view.dart';
+import '../modules/reset_password/bindings/reset_password_binding.dart';
+import '../modules/reset_password/views/reset_password_view.dart';
 import '../modules/signin/bindings/signin_binding.dart';
 import '../modules/signin/views/signin_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
 import '../modules/signup/views/signup_view.dart';
 import '../modules/started/bindings/started_binding.dart';
 import '../modules/started/views/started_view.dart';
+import '../modules/verification_code/bindings/verification_code_binding.dart';
+import '../modules/verification_code/views/verification_code_view.dart';
 
 part 'app_routes.dart';
 
@@ -50,6 +54,16 @@ class AppPages {
       name: _Paths.SIGNIN,
       page: () => const SigninView(),
       binding: SigninBinding(),
+    ),
+    GetPage(
+      name: _Paths.VERIFICATION_CODE,
+      page: () => const VerificationCodeView(),
+      binding: VerificationCodeBinding(),
+    ),
+    GetPage(
+      name: _Paths.RESET_PASSWORD,
+      page: () => const ResetPasswordView(),
+      binding: ResetPasswordBinding(),
     ),
   ];
 }
