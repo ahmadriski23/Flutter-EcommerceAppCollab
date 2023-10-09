@@ -1,3 +1,5 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'package:ecommerce_app/app/shared/widget/back_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +15,8 @@ class SignupView extends GetView<SignupController> {
   const SignupView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    SignupController _controller = Get.put(SignupController());
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.white,
@@ -31,7 +33,7 @@ class SignupView extends GetView<SignupController> {
                           .copyWith(fontSize: 28, fontWeight: FontWeight.w600)),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: TextFormField(
@@ -39,7 +41,7 @@ class SignupView extends GetView<SignupController> {
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
-                  controller: _controller.usernameController,
+                  controller: controller.usernameController,
                   decoration: InputDecoration(
                     labelText: 'Username',
                     hintText: 'Username...',
@@ -54,13 +56,13 @@ class SignupView extends GetView<SignupController> {
                     focusedBorder: const UnderlineInputBorder(
                         borderSide:
                             BorderSide(width: 0.5, color: AppColors.purple)),
-                    suffix: _controller.isIconChecked.value
+                    suffix: controller.isIconChecked.value
                         ? const Icon(
-                            Icons.check,
+                            Icons.check_circle,
                             color: AppColors.green,
                           )
                         : const Icon(
-                            Icons.close,
+                            Icons.cancel,
                             color: AppColors.red,
                           ),
                   ),
@@ -76,8 +78,8 @@ class SignupView extends GetView<SignupController> {
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
-                  obscureText: !_controller.isPasswordVisible.value,
-                  controller: _controller.passwordController,
+                  obscureText: !controller.isPasswordVisible.value,
+                  controller: controller.passwordController,
                   decoration: InputDecoration(
                     labelText: 'Password',
                     hintText: 'Password...',
@@ -96,19 +98,19 @@ class SignupView extends GetView<SignupController> {
                     prefix: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
-                        _controller.passwordStrengthMessage.value,
+                        controller.passwordStrengthMessage.value,
                         style: AppText.purpleText.copyWith(
                             fontSize: 12,
-                            color: _controller.isPasswordStrong.value
+                            color: controller.isPasswordStrong.value
                                 ? AppColors.green
                                 : AppColors.red),
                       ),
                     ),
                     suffix: InkWell(
                         onTap: () {
-                          _controller.tooglePasswordVisibility();
+                          controller.tooglePasswordVisibility();
                         },
-                        child: _controller.isPasswordVisible.value
+                        child: controller.isPasswordVisible.value
                             ? const Icon(
                                 Icons.visibility,
                                 color: AppColors.gray,
@@ -130,7 +132,7 @@ class SignupView extends GetView<SignupController> {
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
-                  controller: _controller.emailController,
+                  controller: controller.emailController,
                   decoration: InputDecoration(
                     labelText: 'Email Address',
                     hintText: 'Your Email...',
@@ -145,19 +147,19 @@ class SignupView extends GetView<SignupController> {
                     focusedBorder: const UnderlineInputBorder(
                         borderSide:
                             BorderSide(width: 0.5, color: AppColors.purple)),
-                    suffix: _controller.isEmailValid.value
-                        ? Icon(
+                    suffix: controller.isEmailValid.value
+                        ? const Icon(
                             Icons.check,
                             color: AppColors.green,
                           )
-                        : Icon(
+                        : const Icon(
                             Icons.close,
                             color: AppColors.red,
                           ),
                   ),
                   onChanged: (value) {
-                    final isEmailValid = _controller.isValidEmail(value);
-                    _controller.isEmailValid.value = isEmailValid;
+                    final isEmailValid = controller.isValidEmail(value);
+                    controller.isEmailValid.value = isEmailValid;
                   },
                 ),
               ),
@@ -165,7 +167,7 @@ class SignupView extends GetView<SignupController> {
                 height: 25.0,
               ),
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: ListTile(
                   leading: Text(
                     'Remember Me',
@@ -176,36 +178,14 @@ class SignupView extends GetView<SignupController> {
                   trailing: Transform.scale(
                     scale: 0.7,
                     child: CupertinoSwitch(
-                        value: _controller.switchValue.value,
+                        value: controller.switchValue.value,
                         onChanged: (value) {
-                          _controller.switchValue.value = value;
+                          controller.switchValue.value = value;
                         }),
                   ),
                 ),
               ),
-              Spacer(),
-              Text(
-                'By connecting your account confirm that you agree',
-                style: AppText.grayText.copyWith(
-                  fontSize: 13,
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'with our ',
-                    style: AppText.grayText.copyWith(
-                      fontSize: 13,
-                    ),
-                  ),
-                  Text(
-                    textAlign: TextAlign.center,
-                    'Term and Condition',
-                    style: AppText.blackText.copyWith(fontSize: 13),
-                  )
-                ],
-              ),
+              const Spacer(),
               const SizedBox(
                 height: 15.0,
               ),

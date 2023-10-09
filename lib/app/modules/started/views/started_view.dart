@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/app/modules/signup/views/signup_view.dart';
 import 'package:ecommerce_app/app/modules/started/widget/account_button.dart';
 import 'package:ecommerce_app/app/shared/utils/colors.dart';
 import 'package:ecommerce_app/app/shared/utils/text.dart';
@@ -67,9 +66,12 @@ class StartedView extends GetView<StartedController> {
                 const SizedBox(
                   width: 5.0,
                 ),
-                Text(
-                  'Signin',
-                  style: AppText.blackText.copyWith(fontSize: 15),
+                InkWell(
+                  onTap: () => Get.toNamed('/signin'),
+                  child: Text(
+                    'Signin',
+                    style: AppText.blackText.copyWith(fontSize: 15),
+                  ),
                 ),
               ],
             ),
@@ -77,7 +79,7 @@ class StartedView extends GetView<StartedController> {
               height: 25.0,
             ),
             QBottomButton(
-                onTap: () => Get.to(SignupView()), text: 'Create an Account'),
+                onTap: () => Get.toNamed('/signup'), text: 'Create an Account'),
           ],
         ),
       ),
