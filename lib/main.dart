@@ -11,6 +11,7 @@ void main() {
       title: "Ecommerce App",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      defaultTransition: Transition.fadeIn,
     ),
   );
 }

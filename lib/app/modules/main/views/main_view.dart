@@ -12,12 +12,11 @@ class MainView extends GetView<MainController> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text('MainView'),
-          centerTitle: true,
+        body: Navigator(
+          key: Get.nestedKey(1),
+          initialRoute: '/home',
+          onGenerateRoute: controller.onGenerateRoute,
         ),
-        body: Obx(() =>
-            controller.pages[Get.find<NavbarController>().selectedPage.value]),
         bottomNavigationBar:
             Obx(() => navbar(Get.find<NavbarController>().selectedPage.value)),
       ),

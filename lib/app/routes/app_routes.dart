@@ -11,6 +11,9 @@ abstract class Routes {
   static const SIGNIN = _Paths.SIGNIN;
   static const VERIFICATION_CODE = _Paths.VERIFICATION_CODE;
   static const RESET_PASSWORD = _Paths.RESET_PASSWORD;
+  static const WISHLIST = _Paths.WISHLIST;
+  static const CART = _Paths.CART;
+  static const WALLET = _Paths.WALLET;
 }
 
 abstract class _Paths {
@@ -23,4 +26,7 @@ abstract class _Paths {
   static const SIGNIN = '/signin';
   static const VERIFICATION_CODE = '/verification-code';
   static const RESET_PASSWORD = '/reset-password';
+  static const WISHLIST = '/wishlist';
+  static const CART = '/cart';
+  static const WALLET = '/wallet';
 }

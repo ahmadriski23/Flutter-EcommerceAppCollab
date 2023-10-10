@@ -33,6 +33,7 @@ navbar(int selectedPage) {
               : InkWell(
                   onTap: () {
                     Get.find<NavbarController>().selectedPage.value = 0;
+                    Get.toNamed('/home', id: 1);
                   },
                   child: Image.asset(
                     'assets/icons/home.png',
@@ -50,6 +51,7 @@ navbar(int selectedPage) {
               : InkWell(
                   onTap: () {
                     Get.find<NavbarController>().selectedPage.value = 1;
+                    Get.toNamed('/wishlist', id: 1);
                   },
                   child: Image.asset(
                     'assets/icons/wishlist.png',
@@ -67,6 +69,7 @@ navbar(int selectedPage) {
               : InkWell(
                   onTap: () {
                     Get.find<NavbarController>().selectedPage.value = 2;
+                    Get.toNamed('/cart', id: 1);
                   },
                   child: Image.asset(
                     'assets/icons/cart.png',
@@ -84,6 +87,7 @@ navbar(int selectedPage) {
               : InkWell(
                   onTap: () {
                     Get.find<NavbarController>().selectedPage.value = 3;
+                    Get.toNamed('/wallet', id: 1);
                   },
                   child: Image.asset(
                     'assets/icons/wallet.png',
