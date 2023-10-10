@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 abstract class AppColors {
   static const purple = Color(0xff9775FA);
   static const white = Color(0xffFEFEFE);
+  static const lightGrey = Color(0xffF5F6FA);
   static const black = Color(0xff1D1E20);
   static const gray = Color(0xff8F959E);
   static const green = Color(0xff34C559);
