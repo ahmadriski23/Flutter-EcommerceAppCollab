@@ -1,5 +1,4 @@
 import 'package:ecommerce_app/app/modules/onboard/widget/gender_button.dart';
-import 'package:ecommerce_app/app/modules/started/views/started_view.dart';
 import 'package:ecommerce_app/app/shared/utils/text.dart';
 import 'package:flutter/material.dart';
 
