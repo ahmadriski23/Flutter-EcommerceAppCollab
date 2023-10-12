@@ -1,8 +1,10 @@
 import 'package:ecommerce_app/app/models/product.dart';
+import 'package:ecommerce_app/app/modules/main/controllers/main_controller.dart';
 import 'package:ecommerce_app/app/shared/utils/colors.dart';
 import 'package:ecommerce_app/app/shared/utils/text.dart';
 import 'package:ecommerce_app/app/shared/widget/brand_card.dart';
 import 'package:ecommerce_app/app/shared/widget/product_card.dart';
+import 'package:ecommerce_app/app/shared/widget/drawer.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -10,7 +12,7 @@ import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+  HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +28,14 @@ class HomeView extends GetView<HomeController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset(
-                  'assets/icons/menu.png',
-                  width: 45,
+                GestureDetector(
+                  onTap: () {
+                    Get.find<MainController>().openDrawer();
+                  },
+                  child: Image.asset(
+                    'assets/icons/menu.png',
+                    width: 45,
+                  ),
                 ),
                 Image.asset(
                   'assets/icons/mini-cart.png',
@@ -95,16 +102,18 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                 ),
-                Container(
-                  width: 50,
-                  height: 50,
-                  margin: const EdgeInsets.only(left: 10),
-                  padding: const EdgeInsets.all(14),
-                  decoration: BoxDecoration(
-                    color: AppColors.purple,
-                    borderRadius: BorderRadius.circular(10),
+                GestureDetector(
+                  child: Container(
+                    width: 50,
+                    height: 50,
+                    margin: const EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                      color: AppColors.purple,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Image.asset('assets/icons/voice.png'),
                   ),
-                  child: Image.asset('assets/icons/voice.png'),
                 )
               ],
             ),
@@ -141,8 +150,6 @@ class HomeView extends GetView<HomeController> {
                   BrandCard(title: 'Adidas', icon: 'adidas.png'),
                   BrandCard(title: 'Nike', icon: 'nike.png'),
                   BrandCard(title: 'Fila', icon: 'fila.png'),
-                  BrandCard(title: 'Adidas', icon: 'adidas.png'),
-                  BrandCard(title: 'Adidas', icon: 'adidas.png'),
                 ],
               ),
             ),

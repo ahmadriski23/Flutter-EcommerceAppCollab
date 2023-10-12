@@ -10,11 +10,22 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class MainController extends GetxController {
+  var isDrawerOpen = false.obs;
+  var scaffoldKey = GlobalKey<ScaffoldState>();
+
+  void openDrawer() {
+    scaffoldKey.currentState!.openDrawer();
+  }
+
+  void closeDrawer() {
+    scaffoldKey.currentState!.openEndDrawer();
+  }
+
   Route? onGenerateRoute(RouteSettings settings) {
     if (settings.name == '/home') {
       return GetPageRoute(
         settings: settings,
-        page: () => const HomeView(),
+        page: () => HomeView(),
         binding: HomeBinding(),
       );
     }
