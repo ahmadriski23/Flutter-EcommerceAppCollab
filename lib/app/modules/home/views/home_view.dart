@@ -1,8 +1,10 @@
 import 'package:ecommerce_app/app/models/product.dart';
+import 'package:ecommerce_app/app/modules/main/controllers/main_controller.dart';
 import 'package:ecommerce_app/app/shared/utils/colors.dart';
 import 'package:ecommerce_app/app/shared/utils/text.dart';
 import 'package:ecommerce_app/app/shared/widget/brand_card.dart';
 import 'package:ecommerce_app/app/shared/widget/product_card.dart';
+import 'package:ecommerce_app/app/shared/widget/drawer.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -10,7 +12,7 @@ import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+  HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +28,14 @@ class HomeView extends GetView<HomeController> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset(
-                  'assets/icons/menu.png',
-                  width: 45,
+                GestureDetector(
+                  onTap: () {
+                    Get.find<MainController>().openDrawer();
+                  },
+                  child: Image.asset(
+                    'assets/icons/menu.png',
+                    width: 45,
+                  ),
                 ),
                 Image.asset(
                   'assets/icons/mini-cart.png',

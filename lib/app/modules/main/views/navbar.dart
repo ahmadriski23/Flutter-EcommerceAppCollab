@@ -14,7 +14,7 @@ navbar(int selectedPage) {
             color: Color(0x141D1E20),
             blurRadius: 20,
             offset: Offset(0, -4),
-            spreadRadius: 0,
+            spreadRadius: 10,
           )
         ],
         color: AppColors.white,
