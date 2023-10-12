@@ -95,16 +95,18 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                 ),
-                Container(
-                  width: 50,
-                  height: 50,
-                  margin: const EdgeInsets.only(left: 10),
-                  padding: const EdgeInsets.all(14),
-                  decoration: BoxDecoration(
-                    color: AppColors.purple,
-                    borderRadius: BorderRadius.circular(10),
+                GestureDetector(
+                  child: Container(
+                    width: 50,
+                    height: 50,
+                    margin: const EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.all(14),
+                    decoration: BoxDecoration(
+                      color: AppColors.purple,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Image.asset('assets/icons/voice.png'),
                   ),
-                  child: Image.asset('assets/icons/voice.png'),
                 )
               ],
             ),
@@ -141,8 +143,6 @@ class HomeView extends GetView<HomeController> {
                   BrandCard(title: 'Adidas', icon: 'adidas.png'),
                   BrandCard(title: 'Nike', icon: 'nike.png'),
                   BrandCard(title: 'Fila', icon: 'fila.png'),
-                  BrandCard(title: 'Adidas', icon: 'adidas.png'),
-                  BrandCard(title: 'Adidas', icon: 'adidas.png'),
                 ],
               ),
             ),
