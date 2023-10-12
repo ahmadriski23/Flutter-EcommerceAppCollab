@@ -182,12 +182,17 @@ class HomeView extends GetView<HomeController> {
                   physics: const BouncingScrollPhysics(),
                   itemCount: 10,
                   itemBuilder: (context, index) {
+                    final product = Product(
+                        title: "Nike Sportswear Club Fleece",
+                        price: 99,
+                        image: "assets/img/product1.png",
+                        brand: "Nike");
                     return ProductCard(
-                      product: Product(
-                          title: "Nike Sportswear Club Fleece",
-                          price: 99,
-                          image: "assets/img/product1.png",
-                          brand: "Nike"),
+                      onTap: () => Get.toNamed(
+                        '/detail-product',
+                        arguments: product,
+                      ),
+                      product: product,
                     );
                   }),
             )

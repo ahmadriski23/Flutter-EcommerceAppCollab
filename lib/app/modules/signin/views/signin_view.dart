@@ -142,12 +142,15 @@ class SigninView extends GetView<SigninController> {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Align(
-                    alignment: Alignment.topRight,
-                    child: Text(
-                      'Forgot Password?',
-                      style: AppText.redText.copyWith(
-                        fontSize: 15,
+                  child: InkWell(
+                    onTap: () => Get.toNamed('/reset-password'),
+                    child: Align(
+                      alignment: Alignment.topRight,
+                      child: Text(
+                        'Forgot Password?',
+                        style: AppText.redText.copyWith(
+                          fontSize: 15,
+                        ),
                       ),
                     ),
                   ),

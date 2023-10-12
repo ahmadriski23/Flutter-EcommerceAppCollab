@@ -13,6 +13,7 @@ class VerificationCodeView extends GetView<VerificationCodeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.white,
       appBar: AppBar(
         backgroundColor: AppColors.white,
