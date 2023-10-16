@@ -1,5 +1,7 @@
 import 'package:ecommerce_app/app/modules/detail_product/widget/back_button2.dart';
+import 'package:ecommerce_app/app/modules/detail_product/widget/card_reviews.dart';
 import 'package:ecommerce_app/app/shared/utils/text.dart';
+import 'package:ecommerce_app/app/shared/widget/bottom_button.dart';
 import 'package:ecommerce_app/app/shared/widget/mini_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,7 +28,7 @@ class DetailProductView extends GetView<DetailProductController> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          QBackButton2(),
+                          const QBackButton2(),
                           MiniCart(
                             onTap: () {},
                           ),
@@ -202,8 +204,11 @@ class DetailProductView extends GetView<DetailProductController> {
                     trimExpandedText: 'Less',
                   ),
                 ),
+                const SizedBox(
+                  height: 25.0,
+                ),
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -224,6 +229,53 @@ class DetailProductView extends GetView<DetailProductController> {
                     ],
                   ),
                 ),
+                const SizedBox(
+                  height: 15.0,
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20.0),
+                  child: CardReview(),
+                ),
+                const SizedBox(
+                  height: 25.0,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          children: [
+                            Text(
+                              'Total Price',
+                              style: AppText.blackText.copyWith(
+                                  fontSize: 15, fontWeight: FontWeight.w600),
+                            ),
+                            const SizedBox(
+                              height: 5.0,
+                            ),
+                            Text(
+                              'with VAT,SD',
+                              style: AppText.grayText.copyWith(
+                                fontSize: 11,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Text(
+                          '\$${controller.product.price}',
+                          style: AppText.blackText.copyWith(
+                              fontSize: 17, fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 15.0,
+                ),
+                QBottomButton(text: 'Add to Cart', onTap: () {}),
               ],
             ),
           ),
