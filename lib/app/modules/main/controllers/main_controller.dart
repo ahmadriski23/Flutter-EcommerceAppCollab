@@ -11,6 +11,7 @@ import 'package:get/get.dart';
 
 class MainController extends GetxController {
   var isDrawerOpen = false.obs;
+  var isDarkmode = false.obs;
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
   void openDrawer() {

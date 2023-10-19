@@ -7,10 +7,13 @@ AppBar myAppBar(String title) {
     backgroundColor: AppColors.white,
     elevation: 0,
     centerTitle: true,
-    leading: InkWell(
-      child: Image.asset(
-        'assets/icons/back.png',
-        width: 45,
+    leading: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 5),
+      child: InkWell(
+        child: Image.asset(
+          'assets/icons/back.png',
+          width: 45,
+        ),
       ),
     ),
     title: Text(
