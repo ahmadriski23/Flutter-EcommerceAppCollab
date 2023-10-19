@@ -103,13 +103,22 @@ class AppDrawer extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
-                      SizedBox(
-                        width: 45,
-                        height: 25,
-                        child: FittedBox(
+                      Obx(
+                        () => SizedBox(
+                          width: 45,
+                          height: 25,
+                          child: FittedBox(
                             child: CupertinoSwitch(
-                                value: false, onChanged: (a) {})),
-                      ),
+                              activeColor: AppColors.purple,
+                              value:
+                                  Get.find<MainController>().isDarkmode.value,
+                              onChanged: (a) {
+                                Get.find<MainController>().isDarkmode.value = a;
+                              },
+                            ),
+                          ),
+                        ),
+                      )
                     ],
                   ),
                   const SizedBox(
